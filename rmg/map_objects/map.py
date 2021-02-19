@@ -1,4 +1,4 @@
-from rmg.map_objects.tile import Tile
+from map_objects.tile import Tile
 
 
 class Map:
