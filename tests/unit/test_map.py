@@ -2,18 +2,18 @@ from map_objects.map import Map
 
 
 def test_class_initialization():
-    m1 = Map(5, 5)
+    m1 = Map(5, 4)
 
     expected_width = 5
-    expected_height = 5
+    expected_height = 4
 
     assert m1.width == expected_width
     assert m1.height == expected_height
 
-    assert len(m1.tiles) == expected_height
+    assert len(m1.tiles) == expected_width
 
     for x_row in m1.tiles:
-        assert len(x_row) == expected_width
+        assert len(x_row) == expected_height
 
         for tile in x_row:
             expected_blocked = True
