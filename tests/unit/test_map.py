@@ -2,10 +2,10 @@ from map_objects.map import Map
 
 
 def test_class_initialization():
-    m1 = Map(5, 4)
-
     expected_width = 5
     expected_height = 4
+
+    m1 = Map(expected_width, expected_height)
 
     assert m1.width == expected_width
     assert m1.height == expected_height
