@@ -26,6 +26,17 @@ def test_class_initialization():
             assert tile.explored == expected_explored
 
 
+def test_is_blocked():
+    m1 = Map(10, 10)
+
+    assert m1.is_blocked(1, 1) is True
+
+    room = Rect(0, 0, 10, 10)
+    m1.create_room(room)
+
+    assert m1.is_blocked(1, 1) is False
+
+
 def test_create_room():
     m1 = Map(10, 10)
     room_x = 1
