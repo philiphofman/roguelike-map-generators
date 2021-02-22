@@ -47,6 +47,24 @@ class Map:
 
         return tiles
 
+    def is_blocked(self, x, y):
+        """Returns boolean about whether a tile is blocked.
+
+        Args:
+            x(int): The tile's x coordinate.
+            y(int): The tile's y coordinate.
+
+        Returns:
+            (bool): A boolean value describing whether the tile
+                specified in this object's 2D tile array
+                blocks movement.
+        """
+
+        if self.tiles[x][y].blocked:
+            return True
+
+        return False
+
     def create_room(self, room):
         """Goes through the tiles in a room and unblocks them.
 
