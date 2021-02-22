@@ -4,8 +4,13 @@ A tile on a map. It may or may not be blocked, and may or may not block sight.
 
 
 class Tile:
-    """This is the Tile class. It tells you if it's blocked, blocks sight, or
-    is explored."""
+    """The Tile class is the basic building block of maps.
+
+    Attributes:
+        blocked (bool): Whether the tile blocks movement.
+        block_sight (bool): Whether the tile blocks sight.
+        explored (bool): Whether the tile has been explored.
+    """
 
     def __init__(self, blocked, block_sight=None):
         """Inits default values for this Tile.
