@@ -38,7 +38,7 @@ class Map:
         x2 ->  [y0, y1, y2]]
 
         Returns:
-            tiles(list): A 2D array of tiles with the dimensions of the GameMap
+            tiles(list): A 2D array of tiles with the dimensions of the Map
                 object.
         """
 
@@ -62,3 +62,16 @@ class Map:
             for y in range(room.y1 + 1, room.y2):
                 self.tiles[x][y].blocked = False
                 self.tiles[x][y].block_sight = False
+
+    def create_h_tunnel(self, x1, x2, y):
+        """Creates a horizontal tunnel.
+
+        Args:
+            x1(int): The starting point.
+            x2(int): The end point.
+            y(int): Which row to use.
+        """
+
+        for x in range(min(x1, x2), max(x1, x2) + 1):
+            self.tiles[x][y].blocked = False
+            self.tiles[x][y].block_sight = False
