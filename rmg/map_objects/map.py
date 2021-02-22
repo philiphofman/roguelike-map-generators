@@ -46,3 +46,19 @@ class Map:
                  range(self.width)]
 
         return tiles
+
+    def create_room(self, room):
+        """Goes through the tiles in a room and unblocks them.
+
+        The function leaves a one-tile-wide wall around the room,
+        so if the room is 5x5, the walkable floor space will measure
+        4x4.
+
+        Args:
+            room(Rect): A Rect object representing the room.
+        """
+
+        for x in range(room.x1 + 1, room.x2):
+            for y in range(room.y1 + 1, room.y2):
+                self.tiles[x][y].blocked = False
+                self.tiles[x][y].block_sight = False
