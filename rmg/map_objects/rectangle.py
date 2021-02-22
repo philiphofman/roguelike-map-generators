@@ -1,6 +1,8 @@
-"""
-Coordinate system starts at top right corner of map. Going right increases x,
-going down increases y:
+class Rect:
+    """A helper class for working with rectangles.
+
+    Coordinate system starts at top right corner of map. Going right
+    increases x, going down increases y:
 
                 0 1 2 3 4
                 1 . . . .
@@ -8,19 +10,21 @@ going down increases y:
                 3 . . . .
                 4 . . . .
 
-"""
-
-class Rect:
-    """A helper class for working with rectangles."""
+    Attributes:
+        x (int): x coordinate of top left corner.
+        y (int): y coordinate of top left corner.
+        x2 (int): x coordinate of bottom right corner.
+        y2 (int): y coordinate of bottom right corner.
+    """
 
     def __init__(self, x, y, w, h):
         """Inits top left corner and bottom right corner coordinates.
 
         Args:
-            x(int): x coordinate of top left corner.
-            y(int): y coordinate of top left corner.
-            w(int): Width of rectangle.
-            h(int): Height of rectangle.
+            x (int): x coordinate of top left corner.
+            y (int): y coordinate of top left corner.
+            w (int): Width of rectangle.
+            h (int): Height of rectangle.
         """
 
         self.x1 = x
@@ -29,11 +33,11 @@ class Rect:
         self.y2 = y + h
 
     def center(self):
-        """Return the center coordinates of this rectangle.
+        """Returns the center coordinates of this rectangle.
 
         Returns:
-            center_x(int): x coordinate of this rectangle's center.
-            center_y(int): y coordinate of this rectangle's center.
+            center_x (int): x coordinate of this rectangle's center.
+            center_y (int): y coordinate of this rectangle's center.
         """
 
         center_x = int((self.x1 + self.x2) / 2)
@@ -44,7 +48,7 @@ class Rect:
         """Returns true if this rectangle intersects with another one.
 
         Args:
-            other(Rect): A Rect object representing the other room.
+            other (Rect): A Rect object representing the other room.
 
         Returns:
             A boolean indicating if this rectangle intersects with the other.
