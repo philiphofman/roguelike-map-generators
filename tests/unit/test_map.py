@@ -73,3 +73,27 @@ def test_create_h_tunnel():
             else:
                 assert y.blocked is True
                 assert y.block_sight is True
+
+
+def test_create_v_tunnel():
+    m1 = Map(10, 10)
+    expected_tunnel_y1 = 2
+    expected_tunnel_y2 = 7
+    expected_tunnel_x = 5
+
+    m1.create_v_tunnel(expected_tunnel_y1,
+                       expected_tunnel_y2,
+                       expected_tunnel_x)
+
+    for x_count, x in enumerate(m1.tiles):
+        for y_count, y in enumerate(x):
+            if expected_tunnel_y1 <= y_count <= expected_tunnel_y2:
+                if x_count == expected_tunnel_x:
+                    assert y.blocked is False
+                    assert y.block_sight is False
+                else:
+                    assert y.blocked is True
+                    assert y.block_sight is True
+            else:
+                assert y.blocked is True
+                assert y.block_sight is True
