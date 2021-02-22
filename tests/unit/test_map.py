@@ -49,3 +49,27 @@ def test_create_room():
             else:
                 assert y.blocked is True
                 assert y.block_sight is True
+
+
+def test_create_h_tunnel():
+    m1 = Map(10, 10)
+    expected_tunnel_x1 = 2
+    expected_tunnel_x2 = 7
+    expected_tunnel_y = 5
+
+    m1.create_h_tunnel(expected_tunnel_x1,
+                       expected_tunnel_x2,
+                       expected_tunnel_y)
+
+    for x_count, x in enumerate(m1.tiles):
+        for y_count, y in enumerate(x):
+            if expected_tunnel_x1 <= x_count <= expected_tunnel_x2:
+                if y_count == expected_tunnel_y:
+                    assert y.blocked is False
+                    assert y.block_sight is False
+                else:
+                    assert y.blocked is True
+                    assert y.block_sight is True
+            else:
+                assert y.blocked is True
+                assert y.block_sight is True
