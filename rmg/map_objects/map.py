@@ -70,7 +70,7 @@ class Map:
 
         The function leaves a one-tile-wide wall around the room,
         so if the room is 5x5, the walkable floor space will measure
-        4x4.
+        3x3.
 
         Args:
             room(Rect): A Rect object representing the room.
