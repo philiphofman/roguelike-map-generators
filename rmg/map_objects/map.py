@@ -60,10 +60,7 @@ class Map:
                 blocks movement.
         """
 
-        if self.tiles[x][y].blocked:
-            return True
-
-        return False
+        return self.tiles[x][y].blocked
 
     def create_room(self, room):
         """Goes through the tiles in a room and unblocks them.
